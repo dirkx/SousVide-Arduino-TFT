@@ -1,6 +1,6 @@
 # Sousvide controller
 
-![Photo](images/IMG_1283.jpg?raw=true "Snapshot" width=480)
+![Photo](images/IMG_1283.jpg)
 
 # Parts/Bill of material
 
@@ -17,12 +17,12 @@
 
 # Enclosure
 
-![Box top](images/box1.png?raw=true "Box top" width=480)
-![Box botom](images/box2.png?raw=true "Box bottom" width=480)
+![Box top](images/box1.png?raw=true "Box top")
+![Box botom](images/box2.png?raw=true "Box bottom")
 
 # Result
 
-![Photo](images/IMG_1279.jpg?raw=true width=480)
-![Photo](images/IMG_1280.jpg?raw=true width=480)
-![Photo](images/IMG_1281.jpg?raw=true width=480)
-![Photo](images/IMG_1282.jpg?raw=true width=480)
+![Photo](images/IMG_1279.jpg?raw=true)
+![Photo](images/IMG_1280.jpg?raw=true)
+![Photo](images/IMG_1281.jpg?raw=true)
+![Photo](images/IMG_1282.jpg?raw=true)
