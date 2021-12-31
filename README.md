@@ -9,7 +9,7 @@
 3. Arduino UNO https://www.kiwi-electronics.nl/nl/arduino-uno-rev3-atmega328-729
 4. 2.4 inch TFT screen € 5-10 https://www.aliexpress.com/item/32923876240.html
 5. Waterproof Temperature sensor: € 2-5 https://www.hobbyelectronica.nl/product/ds18b20-waterdicht/
-6. Some 5 volt adaptor
+6. Some 5 volt adaptor € 2-3 https://nl.aliexpress.com/item/1005001863054181.html
  
 # Wiring
 
