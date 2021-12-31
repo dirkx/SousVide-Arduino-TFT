@@ -1,6 +1,6 @@
 Sousvide controller
 
-![Photo](IMG_1283.jpg?raw=true "Snapshot")
+![Photo](images/IMG_1283.jpg?raw=true "Snapshot")
 -	Arduino UNO
 -	DS18B20 or MAX6675 temperature sensor
 -	2.4 inch TFT screen
