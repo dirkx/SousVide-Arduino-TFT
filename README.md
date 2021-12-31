@@ -1,6 +1,6 @@
 # Sousvide controller
 
-![Photo](images/IMG_1283.jpg?raw=true "Snapshot")
+![Photo](images/IMG_1283.jpg?raw=true "Snapshot" width=480)
 
 # Parts/Bill of material
 
@@ -8,7 +8,7 @@
 2. Solid state relat € 5-10 euro; 16 Ampere https://www.amazon.nl/-/en/dp/B09F9WK7JP/ref=sr_1_14
 3. Arduino UNO https://www.kiwi-electronics.nl/nl/arduino-uno-rev3-atmega328-729
 4. 2.4 inch TFT screen € 5-10 https://www.aliexpress.com/item/32923876240.html
-5. Waterproof Temperature sensor: € 2-5 https://www.hobbyelectronica.nl/product/ds18b20-waterdicht/
+5. Waterproof Temperature sensor: € 2-5 https://www.hobbyelectronica.nl/product/ds18b20-waterdicht/ or alternatively the https://www.amazon.nl/MAX6675-Temperatuur-Thermokoppel-Schroef-Arduino/dp/B07Y9YJ3HG/ref=sr_1_5 for a wider range.
 6. Some 5 volt adaptor € 2-3 https://nl.aliexpress.com/item/1005001863054181.html
  
 # Wiring
@@ -17,12 +17,12 @@
 
 # Enclosure
 
-![Box top](images/box1.png?raw=true "Box top")
-![Box botom](images/box2.png?raw=true "Box bottom")
+![Box top](images/box1.png?raw=true "Box top" width=480)
+![Box botom](images/box2.png?raw=true "Box bottom" width=480)
 
 # Result
 
-![Photo](images/IMG_1279.jpg?raw=true)
-![Photo](images/IMG_1280.jpg?raw=true)
-![Photo](images/IMG_1281.jpg?raw=true)
-![Photo](images/IMG_1282.jpg?raw=true)
+![Photo](images/IMG_1279.jpg?raw=true width=480)
+![Photo](images/IMG_1280.jpg?raw=true width=480)
+![Photo](images/IMG_1281.jpg?raw=true width=480)
+![Photo](images/IMG_1282.jpg?raw=true width=480)
