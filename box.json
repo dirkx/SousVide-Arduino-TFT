@@ -1,0 +1,18 @@
+{
+    "parameterSets": {
+        "z1": {
+            "$fn": "50",
+            "height": "40",
+            "insert": "5",
+            "screen_mod_x": "72.5",
+            "screen_mod_y": "52.7",
+            "screen_x": "50",
+            "screen_y": "37",
+            "uno_x": "69",
+            "uno_y": "53.5",
+            "wall": "1"
+        }
+    },
+    "parameterSets": "",
+    "fileFormatVersion": "1"
+}
