@@ -17,8 +17,19 @@
 
 # Enclosure
 
+## OpenSCAD version
+
 ![Box top](images/box1.png?raw=true "Box top")
 ![Box botom](images/box2.png?raw=true "Box bottom")
+
+## STEP/Fusion version
+
+![Box top](images/all.png?raw=true "Box top")
+![Box top](images/back.png?raw=true "Box top")
+![Box top](images/front.png?raw=true "Box top")
+![Box top](images/half.png?raw=true "Box top")
+![Box top](images/box1.png?raw=true "Box top")
+![Box top](images/box2.png?raw=true "Box top")
 
 # Result
 
