@@ -1,6 +1,6 @@
 # Sousvide controller
 
-![Photo](images/IMG_1283.jpg)
+![Photo](images/IMG_1289.jpg)
 
 # Parts/Bill of material
 
@@ -42,3 +42,11 @@ The trick here is that we continue use the original knob and temperature safetie
 ![Photo](images/IMG_1280.jpg?raw=true)
 ![Photo](images/IMG_1281.jpg?raw=true)
 ![Photo](images/IMG_1282.jpg?raw=true)
+![Photo](images/IMG_1283.jpg?raw=true)
+![Photo](images/IMG_1286.jpg?raw=true)
+![Photo](images/IMG_1288.jpg?raw=true)
+![Photo](images/IMG_1289.jpg?raw=true)
+![Photo](images/IMG_1292.jpg?raw=true)
+![Photo](images/IMG_1293.jpg?raw=true)
+![Photo](images/IMG_1295.jpg?raw=true)
+![Photo](images/IMG_1298.jpg?raw=true)
