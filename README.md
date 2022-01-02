@@ -1,6 +1,6 @@
 # Sousvide controller
 
-![Photo](images/IMG_1289.jpg)
+![Photo](images/IMG_1298.jpg)
 
 # Parts/Bill of material
 
@@ -18,7 +18,14 @@ Prices shown below are just the `first hit` on duckduckgo; if you shop around a 
 
 The trick here is that we continue use the original knob and temperature safeties. So these still set a 'max'.
 
-![Wiringt](images/wiring.png?raw=true "Wiring")
+## before
+
+![Wiringt](images/org-wiring.png?raw=true "Wiring before")
+
+The intend is to also snip, rather than bypass or bridge, the origianal termo controlled switch.
+
+## after
+![Wiringt](images/wiring.png?raw=true "Wiring after")
 
 # Enclosure
 

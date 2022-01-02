@@ -1,16 +1,20 @@
 /* Copyright 2011, 2021 Dirk-Willem van Gulik, alle rights reserved.
- *  
- *  Licensed under the Apache Software Licenses version 2.0 or newer.
- */
+
+    Licensed under the Apache Software Licenses version 2.0 or newer.
+*/
 #include <Adafruit_GFX.h>    // Core graphics library
 
-// Fancier Blue boards with thje M3 holes from Adafruit / kiwielectronics
-// #include <Adafruit_TFTLCD.h>
-
+// #define ADA
+#ifdef ADA
+// Fancier Blue boards with thje M3 holes from Adafruit / kiwielectronics.
+//
+#include <Adafruit_TFTLCD.h>
+#else
 // Red boards with "white price" sticker on the back from unknown
 // provenance and odd white icons on the silkscreen.
 //
 #include "MCUFRIEND_kbv.h"
+#endif
 #include <TouchScreen.h>
 #include <PID_v1.h>
 
@@ -71,6 +75,22 @@
 
 unsigned long tempSampleTimeInMillies;
 
+class Log : public Print {
+  public:
+    Log() {
+      // Serial.begin(115200);
+    }
+    virtual size_t write(uint8_t c);
+  private:
+};
+
+size_t Log::write(uint8_t c) {
+  // return Serial.write(c);
+  return 1;
+}
+
+Log Log;
+
 #ifdef DS18B20
 // Temperatue sensor and relay
 #include <OneWire.h>
@@ -81,15 +101,28 @@ unsigned long tempSampleTimeInMillies;
 OneWire oneWire(ONE_WIRE_BUS);
 DallasTemperature sensors(&oneWire);
 
-void setup_temp() {
+bool setup_temp() {
   sensors.begin();
   DeviceAddress tempDeviceAddress;
   sensors.getAddress(tempDeviceAddress, 0);
+  if (!sensors.validAddress(tempDeviceAddress)) {
+    Log.println("Alert - no sensor found");
+    return false;
+  }
   sensors.setResolution(tempDeviceAddress, RESOLUTION);
 
   sensors.setWaitForConversion(false);
   sensors.requestTemperatures(); // que one up.
   tempSampleTimeInMillies = 750 / (1 << (12 - RESOLUTION));
+
+  Log.print("Wired temperature to i2c; dallas address:");
+  for (int i = 0; i < 8; i++) {
+    if (tempDeviceAddress[i] < 16)
+      Log.print(0, HEX);
+    Log.print(tempDeviceAddress[i], HEX);
+  };
+  Log.println("\n");
+  return true;
 }
 
 float get_temp() {
@@ -193,8 +226,11 @@ TouchScreen ts = TouchScreen(XP, YP, XM, YM, 300);
 
 float   setTemp = 37.00;
 
-// Adafruit_TFTLCD tft(LCD_CS, LCD_CD, LCD_WR, LCD_RD, LCD_RESET);
+#ifdef ADA
+Adafruit_TFTLCD tft(LCD_CS, LCD_CD, LCD_WR, LCD_RD, LCD_RESET);
+#else
 MCUFRIEND_kbv tft(LCD_CS, LCD_CD, LCD_WR, LCD_RD, LCD_RESET);
+#endif
 
 int GRAPH_X, GRAPH_W, GRAPH_Y, GRAPH_H, PWR_X, PWR_Y, PWR_H, PWR_W, DX;
 
@@ -221,25 +257,15 @@ double Setpoint, Input, Output;
 
 PID myPID(&Input, &Output, &Setpoint, consKp, consKi, consKd, DIRECT);
 
-class Log : public Print {
-  public:
-    Log() {
-      Serial.begin(115200);
-    }
-    virtual size_t write(uint8_t c);
-  private:
-};
-
-size_t Log::write(uint8_t c) {
-  return Serial.write(c);
-}
-
-Log Log;
-
-
 void setup(void) {
+  // Serial.begin(115200);
+  // while (!Serial) {};
   Log.println("\n\nStarted " __FILE__ "\n" __DATE__ " " __TIME__);
   tft.reset();
+
+  digitalWrite(RELAY, !RELAY_ON);
+  pinMode(RELAY, OUTPUT);
+  digitalWrite(RELAY, !RELAY_ON);
 
   uint16_t identifier = tft.readID();
   if (!identifier)
@@ -280,8 +306,6 @@ void setup(void) {
                    SET_X + 2 * SET_SIZE, SET_Y - 2 * SET_SIZE,
                    SET_X, SET_Y - 4.2 * SET_SIZE,
                    WHITE);
-  updateSetTemp(setTemp);
-  updateTemp(13.2);
 
 
   tft.drawLine(GRAPH_X - 2, GRAPH_Y - 4,
@@ -311,10 +335,19 @@ void setup(void) {
   myPID.SetMode(AUTOMATIC);
   myPID.SetOutputLimits(0, 100);
 
-  setup_temp();
 
-  pinMode(RELAY, OUTPUT);
-  digitalWrite(RELAY, !RELAY_ON);
+  updateSetTemp(setTemp);
+  if (!setup_temp()) {
+    tft.setCursor(tft.width() / 2, tft.height() / 2);
+    tft.setTextColor(WHITE, BLACK);
+    tft.setTextSize(SET_SIZE / 4);
+    tft.print("NO sensor");
+    while (1) {
+      delay(500);
+      digitalWrite(LED, !digitalRead(LED));
+    }
+  }
+  updateTemp(13.2);
 
   pinMode(LED, OUTPUT);
 }
