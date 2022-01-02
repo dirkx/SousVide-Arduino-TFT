@@ -27,6 +27,8 @@ The intend is to also snip, rather than bypass or bridge, the origianal termo co
 ## after
 ![Wiringt](images/wiring.png?raw=true "Wiring after")
 
+When mounting the SSR inside the case - note that there is one area that is nicely 'flat' (under the sticker). So it is best to mount here; as that means that the whole casing becomes a bit of a heatsink too.
+
 # Enclosure
 
 ## OpenSCAD version
